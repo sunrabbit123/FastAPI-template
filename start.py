@@ -1,7 +1,6 @@
 import uvicorn
 import sys, getopt
 
-from src import app
 from configparser import ConfigParser
 
 
@@ -38,7 +37,7 @@ def main(argv: list() = sys.argv):
         elif opt in ("-P", "--PORT"):
             PORT: int = int(arg)
             # "PORT setting option : -P args, --PORT=args"
-    uvicorn.run("app:app", host="0.0.0.0", port=PORT, reload=reload)
+    uvicorn.run("src:app", host="0.0.0.0", port=PORT, reload=reload)
 
 
 if __name__ == "__main__":
